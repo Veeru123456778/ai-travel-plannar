@@ -12,7 +12,7 @@ const options = {
     keyword: 'RESTAURANTS'
   },
   headers: {
-    'x-rapidapi-key': process.env.RAPID_API_KEY,
+    'x-rapidapi-key':  process.env.RAPID_API_KEY,
     'x-rapidapi-host': 'search-nearby-places.p.rapidapi.com'
   }
 };

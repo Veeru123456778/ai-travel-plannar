@@ -5,6 +5,11 @@
 
 @import "tw-animate-css";
 
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
 
 @keyframes shake {
   0% {

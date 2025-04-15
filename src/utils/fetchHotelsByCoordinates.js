@@ -14,7 +14,7 @@ const fetchHotelsByCoordinates = async (latitude, longitude,arrival_date,departu
       adults:10,
     },
     headers: {
-      'x-rapidapi-key': process.env.RAPID_API_KEY,
+      'x-rapidapi-key':  process.env.RAPID_API_KEY,
       'x-rapidapi-host': 'booking-com15.p.rapidapi.com',
     },
   };

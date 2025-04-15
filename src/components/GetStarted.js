@@ -210,6 +210,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GetStarted() {
   const { theme } = useTheme();
@@ -219,10 +220,11 @@ export default function GetStarted() {
       {/* Button Container */}
       <div className="relative w-80 h-20" id="getStarted">
         {/* Rectangular Button */}
-        <button  className="w-full h-full rounded-lg bg-orange-400 border-4 border-orange-500 shadow-lg flex items-center justify-center">
+
+        <Link href="/sign-in"  className="w-full h-full rounded-lg bg-orange-400 border-4 border-orange-500 shadow-lg flex items-center justify-center" >
           <span className="text-white text-xl font-bold">Get Started</span>
           {/* <span className="text-white text-xl font-semibold">Get Started</span> */}
-        </button>
+        </Link>
         
         <motion.div
           className="absolute left-1/2 top-1/2"
