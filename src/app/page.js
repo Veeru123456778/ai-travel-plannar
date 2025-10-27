@@ -56,32 +56,3 @@ export default function Home() {
 }
 
 
-// 'use client';
-
-// import { motion } from 'framer-motion';
-// import { useTheme } from "@/context/ThemeContext";
-// import Navbar from '@/components/Navbar';
-// import Image from 'next/image';
-// import GetStarted from '@/components/GetStarted';
-
-// export default function Home() {
-//   const { theme } = useTheme();
-
-//   return (
-//     <div data-theme={theme} className="min-h-screen flex flex-col">
-//       <Navbar />
-//       <section className="flex-grow flex items-center justify-center px-6 py-16">
-//         <div className="relative w-72 h-72">
-//           {/* Plane rotating */}
-//          <GetStarted/>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-
-  //   {/* Earth */}
-  //   <div className="w-full h-full rounded-full bg-blue-400 border-8 border-blue-500 flex items-center justify-center shadow-lg">
-  //   <span className="text-white text-xl font-semibold z-10">Get Started</span>
-  // </div>

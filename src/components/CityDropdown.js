@@ -1,16 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function CityDropdown({ cities, onSelect }) {
+export default function CityDropdown({
+  cities = [],
+  onSelect,
+  selected,
+  disabled = false,
+  onFocus,
+  onBlur,
+}) {
   const [search, setSearch] = useState("");
   const [filteredCities, setFilteredCities] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // hydrate input from parent-selected
+  useEffect(() => {
+    if (selected?.name) setSearch(selected.name);
+  }, [selected]);
 
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearch(value);
     if (value.length > 0) {
-      const filtered = cities.filter((city) =>
-        city.name.toLowerCase().includes(value.toLowerCase())
+      const filtered = cities.filter((c) =>
+        c.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredCities(filtered);
       setShowDropdown(true);
@@ -19,10 +31,10 @@ export default function CityDropdown({ cities, onSelect }) {
     }
   };
 
-  const handleSelect = (city) => {
+  const handlePick = (city) => {
     setSearch(city.name);
     setShowDropdown(false);
-    onSelect(city);
+    onSelect?.({ name: city.name }); // parent emits socket update
   };
 
   return (
@@ -31,15 +43,18 @@ export default function CityDropdown({ cities, onSelect }) {
         type="text"
         value={search}
         onChange={handleSearch}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        disabled={disabled}
         placeholder="Enter city name..."
-        className="w-full p-2 border border-gray-300 rounded"
+        className="w-full p-2 border border-gray-300 rounded disabled:opacity-60"
       />
-      {showDropdown && (
+      {showDropdown && !disabled && (
         <ul className="absolute w-full bg-white border border-gray-300 mt-1 max-h-40 overflow-y-auto shadow-lg rounded">
           {filteredCities.map((city) => (
             <li
-              key={city.id}
-              onClick={() => handleSelect(city)}
+              key={city.id ?? city.name}
+              onClick={() => handlePick(city)}
               className="p-2 cursor-pointer text-black hover:bg-gray-200"
             >
               {city.name}

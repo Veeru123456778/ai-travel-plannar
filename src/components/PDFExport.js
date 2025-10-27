@@ -1,39 +1,3 @@
-// // components/PDFExport.jsx
-// "use client";
-// import { useRef } from "react";
-// import html2pdf from "html2pdf.js";
-
-// export default function PDFExport({ children }) {
-//   const printRef = useRef();
-
-//   const handleDownload = () => {
-//     const element = printRef.current;
-//     // Configuration for html2pdf
-//     const options = {
-//       margin:       0.5,
-//       filename:     'itinerary.pdf',
-//       image:        { type: 'jpeg', quality: 0.98 },
-//       html2canvas:  { scale: 2 },
-//       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-//     };
-
-//     html2pdf().set(options).from(element).save();
-//   };
-
-//   return (
-//     <div>
-//       {/* You wrap your printable content inside this container */}
-//       <div ref={printRef} className="pdf-content">
-//         {children}
-//       </div>
-//       {/* This button starts the PDF download but it can be styled or placed outside the printable area */}
-//       <button onClick={handleDownload} className="btn btn-primary no-print">
-//         Download PDF
-//       </button>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useRef } from "react";

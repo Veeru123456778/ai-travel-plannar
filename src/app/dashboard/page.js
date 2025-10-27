@@ -51,45 +51,107 @@
 // }
 
 
-'use client'
+// 'use client'
 
-import { useState } from 'react'
-import Navbar from '@/components/Navbar'
-import SearchBar from '@/components/SearchBar'
-import TabSwitcher from '@/components/TabSwitcher'
-import SortingFilters from '@/components/SortingFiltersForTrip'
-import TripCard from '@/components/TripCard'
+// import { useState } from 'react'
+// import Navbar from '@/components/Navbar'
+// import SearchBar from '@/components/SearchBar'
+// import TabSwitcher from '@/components/TabSwitcher'
+// import SortingFilters from '@/components/SortingFiltersForTrip'
+// import TripCard from '@/components/TripCard'
+// import {Buttons} from '@/components/Buttons'
+// import { currentUser } from "@clerk/nextjs/server";
 
+
+// const DashboardPage = async () => {
+//   const [activeTab, setActiveTab] = useState('your')
+//   const [sortOption, setSortOption] = useState('date')
+
+//   const clerkUser = await currentUser();
+
+//   // Dummy data for demonstration (you would replace this with your actual data).
+//   const trips = [
+//     { id: 1, title: 'Trip 1', date: '2023-10-01', price: 300, duration: 7 },
+//     { id: 2, title: 'Trip 2', date: '2023-09-15', price: 250, duration: 5 },
+//     { id: 3, title: 'Trip 3', date: '2023-11-05', price: 400, duration: 10 },
+//   ]
+
+//   // Sorting logic based on the sortOption
+//   const sortedTrips = trips.sort((a, b) => {
+//     if (sortOption === 'date') {
+//       return new Date(a.date) - new Date(b.date)
+//     } else if (sortOption === 'price') {
+//       return a.price - b.price
+//     } else if (sortOption === 'duration') {
+//       return a.duration - b.duration
+//     }
+//   })
+
+//   return (
+//     <div className="min-h-screen bg-base-200 text-base-content">
+//       <Navbar />
+//       <div className="mx-10 p-4 space-y-6">
+//         <SearchBar />
+//         <Buttons userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
+//         <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
+//         {/* Sorting Filters Component */}
+//         <SortingFilters sortOption={sortOption} setSortOption={setSortOption} />
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+//           {sortedTrips.map((trip) => (
+//             <TripCard key={trip.id} title={trip.title} />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// app/dashboard/page.tsx (Client Component)
+'use client';
+
+import { useState } from 'react';
+import { useUser } from '@clerk/nextjs';
+import Navbar from '@/components/Navbar';
+import SearchBar from '@/components/SearchBar';
+import TabSwitcher from '@/components/TabSwitcher';
+import SortingFilters from '@/components/SortingFiltersForTrip';
+import TripCard from '@/components/TripCard';
+import { Buttons } from '@/components/Buttons';
 
 export default function DashboardPage() {
-  const [activeTab, setActiveTab] = useState('your')
-  const [sortOption, setSortOption] = useState('date')
+  const { user, isLoaded, isSignedIn } = useUser();
+   console.log(user);
+  const [activeTab, setActiveTab] = useState('your');
+  const [sortOption, setSortOption] = useState('date');
 
-  // Dummy data for demonstration (you would replace this with your actual data).
+  // Dummy data for demonstration
   const trips = [
     { id: 1, title: 'Trip 1', date: '2023-10-01', price: 300, duration: 7 },
     { id: 2, title: 'Trip 2', date: '2023-09-15', price: 250, duration: 5 },
     { id: 3, title: 'Trip 3', date: '2023-11-05', price: 400, duration: 10 },
-  ]
+  ];
 
   // Sorting logic based on the sortOption
   const sortedTrips = trips.sort((a, b) => {
     if (sortOption === 'date') {
-      return new Date(a.date) - new Date(b.date)
+      return new Date(a.date) - new Date(b.date);
     } else if (sortOption === 'price') {
-      return a.price - b.price
+      return a.price - b.price;
     } else if (sortOption === 'duration') {
-      return a.duration - b.duration
+      return a.duration - b.duration;
     }
-  })
+  });
+
+  if (!isLoaded) return <div>Loading...</div>;
+  if (!isSignedIn) return <div>You are not signed in</div>;
 
   return (
     <div className="min-h-screen bg-base-200 text-base-content">
       <Navbar />
       <div className="mx-10 p-4 space-y-6">
         <SearchBar />
+        {user && <Buttons userId={user.id} email={user.emailAddresses[0].emailAddress} />}
         <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
-        {/* Sorting Filters Component */}
         <SortingFilters sortOption={sortOption} setSortOption={setSortOption} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {sortedTrips.map((trip) => (
@@ -98,5 +160,5 @@ export default function DashboardPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
