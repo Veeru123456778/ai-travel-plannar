@@ -1,6 +1,28 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Landing Page 
+
 <img width="596" height="278" alt="trippify" src="https://github.com/user-attachments/assets/6450fe54-bf16-44a0-839d-b9ae5e513add" />
+
+## Trip Planning Room
+<img width="595" height="280" alt="Screenshot 2026-09-08 173148" src="https://github.com/user-attachments/assets/1280fd6a-e384-4804-a000-b40575e6cdbf" />
+
+<img width="599" height="257" alt="Screenshot 2026-09-08 172437" src="https://github.com/user-attachments/assets/da05a288-b19a-4c86-a795-6459c588bd28" />
+
+## Inviting other friends to plan the trip
+
+<img width="594" height="284" alt="Screenshot 2026-09-08 172701" src="https://github.com/user-attachments/assets/215a54b1-8f96-496f-91c7-102f4df16419" />
+
+<img width="599" height="281" alt="Screenshot 2026-09-08 172803" src="https://github.com/user-attachments/assets/7f04a3c5-6509-415f-92cf-6484afd5b69c" />
+
+## Real Time Collaboration
+The element gets locked for the other user when one user is typing on one element to avoid collision.
+
+<img width="592" height="279" alt="image" src="https://github.com/user-attachments/assets/65fe126f-c943-477b-a18b-2a0ae0c348be" />
+
+## Generated Trip Iternary
+
+<img width="595" height="280" alt="Screenshot 2026-09-08 173148" src="https://github.com/user-attachments/assets/6ca222b1-fd78-4454-ae08-f58eb620437e" />
 
 ## Getting Started
 
