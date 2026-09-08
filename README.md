@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Landing Page 
 
-<img width="596" height="278" alt="trippify" src="https://github.com/user-attachments/assets/6450fe54-bf16-44a0-839d-b9ae5e513add" />
+<img width="796" height="378" alt="trippify" src="https://github.com/user-attachments/assets/6450fe54-bf16-44a0-839d-b9ae5e513add" />
 
 ## Trip Planning Room
 <img width="595" height="280" alt="Screenshot 2026-09-08 173148" src="https://github.com/user-attachments/assets/1280fd6a-e384-4804-a000-b40575e6cdbf" />
