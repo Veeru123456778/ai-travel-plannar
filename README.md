@@ -9,36 +9,36 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Trip Planning Room
 <img width="896" height="400" alt="Screenshot 2026-09-08 173148" src="https://github.com/user-attachments/assets/1280fd6a-e384-4804-a000-b40575e6cdbf" />
 
-<br/>
+<br>
 
 <img width="896" height="400" alt="Screenshot 2026-09-08 172437" src="https://github.com/user-attachments/assets/da05a288-b19a-4c86-a795-6459c588bd28" />
 
-<br/>
+<br>
 
 
 ## Inviting other friends to plan the trip
 
 <img width="896" height="400" alt="Screenshot 2026-09-08 172701" src="https://github.com/user-attachments/assets/215a54b1-8f96-496f-91c7-102f4df16419" />
 
-<br/>
+<br>
 
 <img width="896" height="400" alt="Screenshot 2026-09-08 172803" src="https://github.com/user-attachments/assets/7f04a3c5-6509-415f-92cf-6484afd5b69c" />
 
-<br/>
+<br>
 
 ## Real Time Collaboration
 The element gets locked for the other user when one user is typing on one element to avoid collision.
 
 <img width="896" height="400" alt="image" src="https://github.com/user-attachments/assets/65fe126f-c943-477b-a18b-2a0ae0c348be" />
 
-<br/>
+<br>
 
 
 ## Generated Trip Iternary
 
 <img width="896" height="400" alt="Screenshot 2026-09-08 173148" src="https://github.com/user-attachments/assets/6ca222b1-fd78-4454-ae08-f58eb620437e" />
 
-<br/>
+<br>
 
 
 ## Getting Started
